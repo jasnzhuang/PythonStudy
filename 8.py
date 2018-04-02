@@ -18,7 +18,7 @@ def getHtmlText(url):
 def fillUnivList(ulist, html):
     soup = BeautifulSoup(html, 'lxml')
     for tr in soup.find('tbody').children:
-        # 检查网页代码可以发现数据都储存在tboyd标签中，这里需要对tbody的儿子节点进行遍历
+        # 检查网页代码可以发现数据都储存在tbody标签中，这里需要对tbody的儿子节点进行遍历
         if isinstance(tr, bs4.element.Tag):
             # 检测标签类型，如果不是bs4库支持的Tag类型，就过滤掉，这里需要先导入bs4库
             tds = tr('td')
